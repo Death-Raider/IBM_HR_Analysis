@@ -12,4 +12,5 @@
 
 - **kaggle link**: https://www.kaggle.com/code/darsh22blc1378/attrition-prediction-complete-comparitive-study
 
-![IBM HR analytics](IBM_HR_analytics.png)
+# Tableau Analysis Dashboard
+![IBM HR analytics](IBH_HR_analytics.png)
