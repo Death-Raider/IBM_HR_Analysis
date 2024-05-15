@@ -9,3 +9,5 @@ pip install -r requirements.txt
 
 IBM_HR_Analytics.twb is the tableau file
 IBM_HR_Analytics.png is the image of the tableau dashboard
+
+kaggle link: https://www.kaggle.com/code/darsh22blc1378/attrition-prediction-complete-comparitive-study
