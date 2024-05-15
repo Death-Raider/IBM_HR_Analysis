@@ -182,7 +182,10 @@ class Ensamble_model():
     results = []
     for i in range(len(self.models_ensemble)):
       if self.setup[i]:
-        x = self.preprocessing_ensemble[i].transform(x_test)
+        try: # if the model cannot transform the data then force it...
+            x = self.preprocessing_ensemble[i].transform(x_test)
+        except:
+            x = self.preprocessing_ensemble[i].fit_transform(x_test)
       else:
         trained_processing_scalar,x = self.preprocessing_ensemble[i](x_test)
         self.preprocessing_ensemble[i] = trained_processing_scalar if trained_processing_scalar != -1 else self.preprocessing_ensemble[i]
@@ -205,7 +208,10 @@ class Ensamble_model():
   def fit(self, x_train, y_train):
     for i in range(len(self.models_ensemble)):
       if self.setup[i]:
-        x = self.preprocessing_ensemble[i].transform(x_train)
+        try:
+            x = self.preprocessing_ensemble[i].transform(x_train)
+        except:
+            x = self.preprocessing_ensemble[i].fit_transform(x_train)
       else:
         trained_processing_scalar,x = self.preprocessing_ensemble[i](x_train)
         self.preprocessing_ensemble[i] = trained_processing_scalar if trained_processing_scalar != -1 else self.preprocessing_ensemble[i]
